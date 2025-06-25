@@ -27,14 +27,14 @@ const HeroSection = () => {
         {/* Main Content */}
         <div className="space-y-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           <h1 className="text-5xl md:text-7xl font-poppins font-bold">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-pink via-neon-aqua to-neon-purple neon-text">
+            <span className="text-white">
               Hello!
             </span>
             <br />
-            <span className="text-foreground">I'm Unnati</span>
+            <span className="text-white">I'm</span>
             <br />
             <span className="text-transparent bg-clip-text bg-neon-gradient">
-              Girase
+              Unnati Girase
             </span>
           </h1>
 
