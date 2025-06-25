@@ -19,6 +19,7 @@ const Navigation = () => {
     { label: 'About', href: '#about' },
     { label: 'Experience', href: '#experience' },
     { label: 'Projects', href: '#projects' },
+    { label: 'Achievements', href: '#achievements' },
     { label: 'Certifications', href: '#certifications' },
     { label: 'Contact', href: '#contact' },
   ];
@@ -37,7 +38,7 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="font-poppins font-bold text-xl text-transparent bg-clip-text bg-neon-gradient">
-            Unnati Giraudi
+            Unnati Girase
           </div>
 
           {/* Desktop Menu */}
@@ -65,7 +66,7 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 glass-effect border-t border-white/10">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-t border-white/10 shadow-2xl">
             <div className="px-6 py-4 space-y-4">
               {navItems.map((item) => (
                 <button
