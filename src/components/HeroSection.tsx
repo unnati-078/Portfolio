@@ -14,8 +14,8 @@ const HeroSection = () => {
         <div className="relative inline-block mb-8 animate-fade-in-up">
           <div className="w-48 h-48 mx-auto rounded-full overflow-hidden neon-border hover-glow">
             <img
-              src="https://images.unsplash.com/photo-1494790108755-2616b612b2e3?w=400&h=400&fit=crop&crop=face"
-              alt="Unnati Giraudi"
+              src="/lovable-uploads/6a283c6d-15f9-445a-88cd-83048bf38c94.png"
+              alt="Unnati Girase"
               className="w-full h-full object-cover"
             />
           </div>
@@ -34,7 +34,7 @@ const HeroSection = () => {
             <span className="text-foreground">I'm Unnati</span>
             <br />
             <span className="text-transparent bg-clip-text bg-neon-gradient">
-              Giraudi
+              Girase
             </span>
           </h1>
 
