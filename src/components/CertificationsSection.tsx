@@ -1,41 +1,40 @@
-
 import { Award, Calendar, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import awsLogo from '@/components/images/aws.png';
+import stanfordLogo from '@/components/images/stanford.png';
+import spokenLogo from '@/components/images/spoken.png';
+import postmanLogo from '@/components/images/postman.svg';
 
 const CertificationsSection = () => {
   const certifications = [
     {
-      title: "AWS Certified Solutions Architect",
-      issuer: "Amazon Web Services",
-      date: "2023",
-      credentialId: "AWS-SA-2023-001",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop",
-      verifyUrl: "#"
+      title: "AWS Academy Graduate - AWS Academy Cloud Foundations",
+      issuer: "AWS Academy",
+      date: "June 7, 2025",
+      image: awsLogo,
+      verifyUrl: "https://www.credly.com/go/t3TFxj2x",
     },
     {
-      title: "Google UX Design Professional Certificate",
-      issuer: "Google Career Certificates",
-      date: "2022",
-      credentialId: "GGL-UX-2022-156",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=300&fit=crop",
-      verifyUrl: "#"
+      title: "Stanford University's Code in Place",
+      issuer: "Stanford University",
+      date: "June 6, 2025",
+      image: stanfordLogo,
+      verifyUrl: "https://codeinplace.stanford.edu/cip5/certificate/yyomsn",
     },
     {
-      title: "Machine Learning Engineer Nanodegree",
-      issuer: "Udacity",
-      date: "2022",
-      credentialId: "UD-ML-2022-789",
-      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=300&fit=crop",
-      verifyUrl: "#"
+      title: "Certificate for the Completion of Python 3.4.3 Training",
+      issuer: "Spoken Tutorial, IIT Bombay",
+      date: "May 30, 2025",
+      image: spokenLogo,
+      verifyUrl: "https://drive.google.com/file/d/15UH6Q22x2SCXqbXXH6vwsDEIRZeqEVmV/view?usp=drive_link",
     },
     {
-      title: "Adobe Certified Expert - XD",
-      issuer: "Adobe",
-      date: "2021",
-      credentialId: "ACE-XD-2021-456",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop",
-      verifyUrl: "#"
-    }
+      title: "Postman API Fundamentals Student Expert",
+      issuer: "Postman",
+      date: "October 28, 2024",
+      image: postmanLogo,
+      verifyUrl: "https://drive.google.com/file/d/1O2jgDziw2PVhUiheaFs_TDBN_VP_v8wl/view?usp=sharing",
+    },
   ];
 
   return (
@@ -54,46 +53,39 @@ const CertificationsSection = () => {
           {certifications.map((cert, index) => (
             <div
               key={index}
-              className="glass-effect rounded-2xl overflow-hidden hover-glow animate-fade-in-up group"
+              className="glass-effect rounded-2xl p-6 flex items-center gap-4 hover-glow animate-fade-in-up group"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
-              <div className="relative overflow-hidden">
-                <img
-                  src={cert.image}
-                  alt={cert.title}
-                  className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-neon-purple/20 to-neon-pink/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-
-              <div className="p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex-1">
-                    <h3 className="text-lg font-poppins font-bold text-foreground mb-2 group-hover:text-neon-pink transition-colors duration-300">
+              <img
+                src={cert.image}
+                alt={cert.title}
+                className="w-20 h-20 rounded-xl object-contain"
+              />
+              <div className="flex-1">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h3 className="text-lg font-poppins font-bold text-foreground group-hover:text-neon-pink transition-colors duration-300">
                       {cert.title}
                     </h3>
-                    <p className="text-neon-aqua font-medium mb-1">{cert.issuer}</p>
+                    <p className="text-neon-aqua font-medium">{cert.issuer}</p>
                   </div>
-                  <Award className="w-6 h-6 text-neon-green ml-2 animate-glow" />
+                  <Award className="w-6 h-6 text-neon-green animate-glow" />
                 </div>
 
-                <div className="flex items-center mb-4 text-foreground/70">
+                <div className="flex items-center text-foreground/70 mt-2">
                   <Calendar className="w-4 h-4 mr-2 text-neon-purple" />
                   <span className="text-sm">{cert.date}</span>
                 </div>
 
-                <div className="mb-4">
-                  <p className="text-sm text-foreground/60">
-                    Credential ID: <span className="text-neon-aqua font-mono">{cert.credentialId}</span>
-                  </p>
-                </div>
-
                 <Button
                   size="sm"
-                  className="w-full bg-gradient-to-r from-neon-green to-neon-aqua hover:from-neon-aqua hover:to-neon-purple text-background font-semibold transition-all duration-300 hover:scale-105"
+                  className="mt-3 w-full bg-gradient-to-r from-neon-green to-neon-aqua hover:from-neon-aqua hover:to-neon-purple text-background font-semibold transition-all duration-300 hover:scale-105"
+                  asChild
                 >
-                  <ExternalLink className="w-4 h-4 mr-2" />
-                  Verify Certificate
+                  <a href={cert.verifyUrl} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    View Certificate
+                  </a>
                 </Button>
               </div>
             </div>

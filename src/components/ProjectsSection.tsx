@@ -1,33 +1,27 @@
-
 import { ExternalLink, Github, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import GridBlazerImage from '@/components/images/Untitled design (3).png';
 
-const ProjectsSection = () => {
-  const projects = [
+interface Project {
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  githubUrl: string;
+  liveUrl: string;
+}
+
+const ProjectsSection: React.FC = () => {
+  const projects: Project[] = [
     {
-      title: "AI-Powered Design Assistant",
-      description: "Revolutionary design tool that uses machine learning to suggest optimal UI components and layouts based on user behavior patterns.",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
-      tags: ["AI/ML", "React", "Python", "TensorFlow"],
-      liveUrl: "#",
-      githubUrl: "#"
+      title: "Grid Blazer",
+      description:
+        "An engaging Python game built during Stanford Code in Place. Features custom graphics, animations, and a thrilling victory sequence, designed exclusively for the Code in Place environment.",
+      image: GridBlazerImage,
+      tags: ["Python", "Graphics", "Animations", "Stanford Code in Place"],
+      githubUrl: "https://github.com/unnati-078/Grid-Blazer.git",
+      liveUrl: "https://codeinplace.stanford.edu/cip5/share/jtFEfc0Q0J1k0JnKry8T",
     },
-    {
-      title: "Immersive VR Experience Platform",
-      description: "Next-generation virtual reality platform with intuitive gesture controls and adaptive UI that responds to user emotions and preferences.",
-      image: "https://images.unsplash.com/photo-1493397212122-2b85dda8106b?w=600&h=400&fit=crop",
-      tags: ["VR", "Unity", "C#", "UX Research"],
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      title: "Smart City Dashboard",
-      description: "Comprehensive urban analytics platform that visualizes real-time city data through beautiful, interactive dashboards and predictive insights.",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop",
-      tags: ["Data Viz", "D3.js", "React", "IoT"],
-      liveUrl: "#",
-      githubUrl: "#"
-    }
   ];
 
   return (
@@ -38,11 +32,11 @@ const ProjectsSection = () => {
             <span className="text-transparent bg-clip-text bg-neon-gradient">Projects</span>
           </h2>
           <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
-            Showcasing innovative solutions that blend creativity with cutting-edge technology
+            Showcasing innovative solutions that blend creativity with technology
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 justify-center">
           {projects.map((project, index) => (
             <div
               key={index}
@@ -65,9 +59,7 @@ const ProjectsSection = () => {
                 <h3 className="text-xl font-poppins font-bold mb-3 text-foreground group-hover:text-neon-pink transition-colors duration-300">
                   {project.title}
                 </h3>
-                <p className="text-foreground/80 mb-4 leading-relaxed">
-                  {project.description}
-                </p>
+                <p className="text-foreground/80 mb-4 leading-relaxed">{project.description}</p>
 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag, tagIndex) => (
@@ -82,20 +74,38 @@ const ProjectsSection = () => {
 
                 <div className="flex gap-3">
                   <Button
+                    asChild
                     size="sm"
                     className="flex-1 bg-gradient-to-r from-neon-pink to-neon-purple hover:from-neon-purple hover:to-neon-aqua text-white transition-all duration-300 hover:scale-105"
                   >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Live Demo
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Live Demo
+                    </a>
                   </Button>
                   <Button
+                    asChild
                     size="sm"
                     variant="outline"
-                    className="border-neon-aqua text-neon-aqua hover:bg-neon-aqua hover:text-background transition-all duration-300"
+                    className="border-neon-aqua text-neon-aqua hover:bg-neon-aqua hover:text-background"
                   >
-                    <Github className="w-4 h-4" />
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Github className="w-4 h-4" />
+                    </a>
                   </Button>
                 </div>
+
+                <p className="mt-2 text-xs text-foreground/50">
+                  Code runs in Stanford Code in Place environment only
+                </p>
               </div>
             </div>
           ))}

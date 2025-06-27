@@ -31,8 +31,7 @@ const HeroSection = () => {
               Hello!
             </span>
             <br />
-            <span className="text-white">I'm</span>
-            <br />
+            <span className="text-white">I'm </span>
             <span className="text-transparent bg-clip-text bg-neon-gradient">
               Unnati Girase
             </span>
@@ -53,7 +52,7 @@ const HeroSection = () => {
               variant="outline"
               className="border-2 border-neon-aqua text-neon-aqua hover:bg-neon-aqua hover:text-background font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
             >
-              Download CV
+              Resume
             </Button>
           </div>
         </div>
