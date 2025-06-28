@@ -9,7 +9,7 @@ Welcome to my portfolio website repository!
 This project is my **personal portfolio site** designed and developed to showcase my skills, projects, and experiences as a developer and an aspiring entrepreneur. The goal was to create a modern, responsive, and visually engaging platform to connect with collaborators, recruiters, and anyone interested in my work.
 
 🔗 **Live Website:**  
-[https://lovable.dev/projects/840920fd-151c-453d-b0c2-8385216c8bc1](https://lovable.dev/projects/840920fd-151c-453d-b0c2-8385216c8bc1)
+[https://unnatigirase.vercel.app/](https://unnatigirase.vercel.app/)
 
 ---
 
